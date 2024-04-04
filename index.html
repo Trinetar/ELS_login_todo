@@ -1,8 +1,11 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="login-container">
@@ -14,21 +17,7 @@
         </form>
         <p id="login-message"></p>
     </div>
-    <script>
-        document.getElementById('login-form').addEventListener('submit', (event) => {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            window.electron.send('login', { username, password });
-        });
-
-        window.electron.receive('login-success', (username) => {
-            document.getElementById('login-message').innerText = `Login successful. Welcome, ${username}!`;
-        });
-
-        window.electron.receive('login-failed', () => {
-            document.getElementById('login-message').innerText = 'Invalid username or password.';
-        });
-    </script>
+    <script src="preload.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>

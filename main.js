@@ -1,3 +1,4 @@
+// main.js
 const { app, BrowserWindow, ipcMain } = require('electron');
 const fs = require('fs');
 
@@ -5,8 +6,8 @@ let mainWindow;
 
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
-        width: 400,
-        height: 300,
+        width: 800,
+        height: 600,
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
@@ -25,7 +26,8 @@ app.on('ready', () => {
 
             const credentials = JSON.parse(data);
             if (credentials[username] === password) {
-                mainWindow.webContents.send('login-success', username);
+                mainWindow.loadFile('login.html');
+                mainWindow.webContents.send('update-greeting', 'Good Morning');
             } else {
                 mainWindow.webContents.send('login-failed');
             }
