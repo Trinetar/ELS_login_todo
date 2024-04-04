@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="tasks-list">
+        <!-- Tasks will be displayed here -->
+    </div>
+    <input type="text" id="task-input" placeholder="Enter task description">
+    <button onclick="addTask()">Add Task</button>
+    <script src="renderer.js"></script>
+</body>
+</html>
+
