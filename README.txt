@@ -1,0 +1,2 @@
+start by 
+npm start

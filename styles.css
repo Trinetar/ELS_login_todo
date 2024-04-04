@@ -1,0 +1,77 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.todo-app {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-app h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+/* Input and Button styles */
+#todoInput {
+    width: calc(100% - 70px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#addBtn {
+    width: 50px;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#addBtn:hover {
+    background-color: #0056b3;
+}
+
+/* List styles */
+#todoList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#todoList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+#todoList li:last-child {
+    border-bottom: none;
+}
+
+#todoList li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Button hover effect */
+button:hover {
+    filter: brightness(110%);
+}

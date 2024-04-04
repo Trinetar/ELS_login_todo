@@ -1,34 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form id="login-form">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-        <p id="login-message"></p>
+    <div class="todo-app">
+        <h1>TODO APP</h1>
+        <input type="text" id="todoInput" placeholder="Add a task...">
+        <button id="addBtn">Add</button>
+        <ul id="todoList"></ul>
     </div>
-    <script>
-        document.getElementById('login-form').addEventListener('submit', (event) => {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            window.electron.send('login', { username, password });
-        });
-
-        window.electron.receive('login-success', (username) => {
-            document.getElementById('login-message').innerText = `Login successful. Welcome, ${username}!`;
-        });
-
-        window.electron.receive('login-failed', () => {
-            document.getElementById('login-message').innerText = 'Invalid username or password.';
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
